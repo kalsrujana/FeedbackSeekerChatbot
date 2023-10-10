@@ -25,3 +25,5 @@ The bot excels in the following key features:
 4. **Feedback Processing:** Your messages will be automatically classified based on sentiment and content, ensuring a comprehensive understanding of your input.
 
 5. **Feedback Recording:** Your feedback will be recorded for further analysis, enhancing services and products.
+
+   ![Step Function Graph](https://github.com/kalsrujana/FeedbackSeekerChatbot/blob/main/stepfunctions_graph.png)
