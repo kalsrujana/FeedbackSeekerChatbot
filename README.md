@@ -26,6 +26,21 @@ The bot excels in the following key features:
 
 5. **Feedback Recording:** Your feedback will be recorded for further analysis, enhancing services and products.
 
-   ![Step Function Graph](https://github.com/kalsrujana/FeedbackSeekerChatbot/blob/main/stepfunctions_graph.png)
-   ![Feedback Solicitation Workflow](https://github.com/kalsrujana/FeedbackSeekerChatbot/blob/main/feedback_solicitation.png)
-   ![FeedbackSeeker Telegram Workflow](https://github.com/kalsrujana/FeedbackSeekerChatbot/blob/main/feedbackSeeker_workflow.png)
+## Workflow design
+---
+### Feedback solicitation workflow
+<p align="center">
+  <img src="https://github.com/kalsrujana/FeedbackSeekerChatbot/blob/main/feedback_solicitation.png" width="700" />
+</p>
+
+---
+### Response generator and Feedback-storing workflow
+<p align="center">
+  <img src="https://github.com/kalsrujana/FeedbackSeekerChatbot/blob/main/feedbackSeeker_workflow.png" width="700" />
+</p>
+
+---
+### Detailed Step function graph
+<p align="center">
+  <img src="https://github.com/kalsrujana/FeedbackSeekerChatbot/blob/main/stepfunctions_graph.png" width="700" />
+</p>
