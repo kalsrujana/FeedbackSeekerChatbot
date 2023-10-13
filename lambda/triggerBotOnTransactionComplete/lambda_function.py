@@ -1,3 +1,4 @@
+import requests
 from telegram import Bot
 from telegram.error import TelegramError
 import asyncio
@@ -49,10 +50,25 @@ class TransactionCompleteEventProcessor:
         logger.info(f"There is a change in transaction_status of user id: {self.user_id} from {self.old_status} to {self.new_status}")
         logger.debug("Triggering the chatbot")
         
-        message_text = "Hi, {first_name} {last_name}, Thank you for your recent purchase! We would love to hear your feedback. Please reply with your review."
+        message_text = "Hi, {first_name} {last_name}, Thank you for your recent purchase! We would love to hear your feedback. Please reply with the product number and the feedback for it."
+        message_text = message_text + self.print_product_details()
         
-        # Run the asynchronous function to send the message
         asyncio.run(self.send_message(message_text))
+        # Run the asynchronous function to send the message
+        # asyncio.run(self.send_message(message_text))
+
+    def print_product_details(self):
+        api = "https://62daf70dd1d97b9e0c49ca5d.mockapi.io/v1/products"
+        response = requests.get(f"{api}")
+        details = ''
+        if response.status_code == 200:
+            logger.info("sucessfully fetched the data")
+            data = response.json()
+            for item in data:
+                details = details + '\n' + f"{item['id']}. {item['productName']}"
+        else:
+            logger.error(f"Error while calling downstream, {response.status_code} error with your request")
+        return details
 
 def lambda_handler(event, context):
     try:
